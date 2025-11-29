@@ -1,0 +1,588 @@
+/* CSS Variables matching Figma design exactly */
+:root {
+    --bg-cream: #FFF4D8;
+    --navbar-coral: #FC775D;
+    --logo-gold: #FFD966;
+    --filter-orange: #FF964F;
+    --filter-border: #F8694D;
+    --dark-brown: #5E2724;
+    --cream-light: #FEE7B1;
+    --item-tan: #E6B289;
+    --black: #000000;
+    --white: #FFFFFF;
+    
+    /* Typography */
+    --font-family: 'Inter', sans-serif;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: var(--font-family);
+    background-color: var(--bg-cream);
+    overflow-x: hidden;
+}
+
+/* Main Container - Matches Figma Frame 1440x1024 */
+.container {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+    position: relative;
+    background-color: var(--bg-cream);
+    overflow-x: hidden;
+}
+
+/* Background Image */
+.background-image {
+    position: fixed;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1200px;
+    height: 800px;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 70px;
+    background-color: var(--navbar-coral);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    z-index: 100;
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-icon {
+    width: 60px;
+    height: 60px;
+    padding: 8px;
+}
+
+.logo-text {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--logo-gold);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    line-height: 1.21;
+}
+
+.profile-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile-link:hover {
+    transform: scale(1.1);
+}
+
+.profile-picture {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: box-shadow 0.2s ease;
+    display: block;
+}
+
+.profile-link:hover .profile-picture {
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* ========== MAIN CONTENT ========== */
+.main-content {
+    position: relative;
+    z-index: 5;
+    padding-top: 80px; /* Space for fixed navbar */
+    padding-bottom: 60px; /* Space above footer */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ========== DIETARY FILTER BAR ========== */
+.dietary-filter-bar {
+    position: relative;
+    top: 0;
+    width: 100%;
+    max-width: 800px;
+    height: 80px;
+    margin: 0 auto 15px auto;
+    padding: 0 15px;
+}
+
+.filter-title {
+    position: absolute;
+    top: 0;
+    left: 7px;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--dark-brown);
+    line-height: 1.21;
+}
+
+.filter-buttons {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 50px;
+    background-color: var(--filter-orange);
+    border: 3px solid var(--filter-border);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    padding: 0 10px;
+    gap: 10px;
+}
+
+.filter-btn {
+    flex: 1;
+    height: 36px;
+    padding: 0 15px;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: var(--font-family);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    line-height: 1.21;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+/* Inactive filter button */
+.filter-btn {
+    background-color: var(--cream-light);
+    color: var(--black);
+    border: 3px solid var(--dark-brown);
+}
+
+/* Active filter button */
+.filter-btn.active {
+    background-color: var(--dark-brown);
+    color: var(--cream-light);
+    border: 3px solid var(--black);
+}
+
+.filter-btn:hover:not(.active) {
+    background-color: #f5d89a;
+}
+
+/* ========== GROCERY LIST SECTION ========== */
+.grocery-list-section {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.grocery-header {
+    margin-bottom: 10px;
+}
+
+.grocery-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--dark-brown);
+    line-height: 1.21;
+    padding: 5px;
+}
+
+.title-line {
+    width: 200px;
+    height: 3px;
+    background-color: var(--dark-brown);
+    margin-left: 5px;
+    margin-top: -5px;
+}
+
+/* ========== GROCERY ITEMS LIST ========== */
+.grocery-items {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+.grocery-item {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: 50px;
+    background-color: var(--item-tan);
+    border: 3px solid var(--dark-brown);
+    border-radius: 15px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    padding-left: 12px;
+    margin: 0 auto;
+}
+
+/* ========== CUSTOM CHECKBOX ========== */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    width: 32px;
+    height: 32px;
+    border: 3px solid var(--dark-brown);
+    border-radius: 10px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: var(--dark-brown);
+}
+
+.checkbox-container input:checked ~ .checkmark::after {
+    content: '✓';
+    color: var(--cream-light);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* ========== ITEM NAME ========== */
+.item-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--black);
+    line-height: 1.21;
+    margin-left: 12px;
+}
+
+.item-name.checked {
+    text-decoration: line-through;
+    font-weight: 400;
+}
+
+
+/* ========== ITEM ICONS (Food decorations on right side) ========== */
+.item-icons {
+    position: absolute;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.item-icon {
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.item-icon.icon-1 {
+    width: 40px;
+    height: 40px;
+}
+
+.item-icon.icon-2 {
+    width: 38px;
+    height: 38px;
+}
+
+.item-icon.icon-3 {
+    width: 35px;
+    height: 35px;
+}
+
+/* ========== ADD ITEM BUTTON ========== */
+.add-item-btn {
+    display: block;
+    width: 150px;
+    height: 45px;
+    margin: 15px auto 0 auto;
+    background-color: var(--filter-orange);
+    border: 3px solid var(--dark-brown);
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: var(--font-family);
+    color: var(--black);
+    cursor: pointer;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    transition: all 0.2s ease;
+    line-height: 1.21;
+}
+
+.add-item-btn:hover {
+    background-color: #ff8533;
+    transform: translateY(-2px);
+}
+
+.add-item-btn:active {
+    transform: translateY(0);
+}
+
+/* ========== FOOTER ========== */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 40px;
+    background-color: var(--navbar-coral);
+    z-index: 90; /* Below navbar but visible */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-link {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--black);
+    text-decoration: none;
+    padding: 5px;
+    line-height: 1.21;
+    transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+    color: var(--logo-gold);
+}
+
+.copyright {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--black);
+    line-height: 1.21;
+}
+
+/* ========== DECORATIVE FOOD IMAGES ========== */
+/* These are positioned exactly as in the Figma design */
+.container::before,
+.container::after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+}
+
+/* ========== GROCERY ITEM TRANSITIONS ========== */
+.grocery-item {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* ========== ADD ITEM MODAL ========== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal {
+    background-color: var(--bg-cream);
+    border: 3px solid var(--dark-brown);
+    border-radius: 15px;
+    padding: 20px 30px;
+    min-width: 320px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--dark-brown);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.modal-input {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-family: var(--font-family);
+    border: 3px solid var(--dark-brown);
+    border-radius: 10px;
+    background-color: var(--cream-light);
+    margin-bottom: 15px;
+    outline: none;
+    transition: box-shadow 0.2s ease;
+}
+
+.modal-input:focus {
+    box-shadow: 0px 0px 0px 3px rgba(94, 39, 36, 0.3);
+}
+
+.modal-dietary {
+    margin-bottom: 15px;
+}
+
+.modal-label {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--dark-brown);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.dietary-checkboxes {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.dietary-checkboxes label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--black);
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: var(--cream-light);
+    border: 2px solid var(--dark-brown);
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+.dietary-checkboxes label:hover {
+    background-color: var(--filter-orange);
+}
+
+.dietary-checkboxes input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    accent-color: var(--dark-brown);
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.modal-btn {
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: var(--font-family);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.cancel-btn {
+    background-color: var(--cream-light);
+    color: var(--black);
+    border: 3px solid var(--dark-brown);
+}
+
+.cancel-btn:hover {
+    background-color: #e5d6a0;
+}
+
+.add-btn {
+    background-color: var(--filter-orange);
+    color: var(--black);
+    border: 3px solid var(--dark-brown);
+}
+
+.add-btn:hover {
+    background-color: #ff8533;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1440px) {
+    .container {
+        width: 100%;
+        min-width: 1440px;
+    }
+}
+

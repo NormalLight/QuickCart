@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickCart - Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Background Image -->
+        <img src="images/background.svg" alt="" class="background-image" aria-hidden="true">
+        
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="navbar-content">
+                <div class="logo-section">
+                    <img src="images/logo.svg" alt="QuickCart Logo" class="logo-icon">
+                    <span class="logo-text">QuickCart</span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content profile-content">
+            <!-- Back Button -->
+            <a href="index.html" class="back-button" title="Back to Grocery List">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 11H7.83L13.42 5.41L12 4L4 12L12 20L13.41 18.59L7.83 13H20V11Z" fill="#5E2724"/>
+                </svg>
+            </a>
+
+            <!-- Profile Page Title -->
+            <h1 class="profile-title">Profile Page</h1>
+
+            <!-- Profile Section -->
+            <div class="profile-section">
+                <!-- Left Side - Profile Picture -->
+                <div class="profile-left">
+                    <div class="profile-picture-large">
+                        <img src="images/profile.png" alt="Profile Picture" id="profileImage">
+                    </div>
+                    <button class="edit-picture-btn">Edit Profile Picture</button>
+                    <button class="logout-btn">Logout</button>
+                </div>
+
+                <!-- Right Side - Form Fields -->
+                <div class="profile-right">
+                    <div class="form-group">
+                        <label class="field-label">Email Address</label>
+                        <div class="label-line"></div>
+                        <input type="email" class="field-input" value="jane.doe@gmail.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="field-label">First Name</label>
+                        <div class="label-line"></div>
+                        <input type="text" class="field-input" value="Jane">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="field-label">Last Name</label>
+                        <div class="label-line"></div>
+                        <input type="text" class="field-input" value="Doe">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="field-label">Birth Date</label>
+                        <div class="label-line"></div>
+                        <input type="text" class="field-input" value="January 1st, 1997">
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <a href="#" class="footer-link">About Us</a>
+                <span class="copyright">© 2025 QuickCart. All rights reserved.</span>
+                <a href="#" class="footer-link">Help / FAQ</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="profile.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickCart - Grocery List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Background Image -->
+        <img src="images/background.svg" alt="" class="background-image" aria-hidden="true">
+        
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="navbar-content">
+                <div class="logo-section">
+                    <img src="images/logo.svg" alt="QuickCart Logo" class="logo-icon">
+                    <span class="logo-text">QuickCart</span>
+                </div>
+                <a href="profile.html" class="profile-link" title="View Profile">
+                    <img src="images/profile.png" alt="Profile" class="profile-picture">
+                </a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dietary Filter Bar -->
+            <section class="dietary-filter-bar">
+                <span class="filter-title">Dietary Filters</span>
+                <div class="filter-buttons">
+                    <button class="filter-btn active">All</button>
+                    <button class="filter-btn">Vegan</button>
+                    <button class="filter-btn">Halal</button>
+                    <button class="filter-btn">Gluten-Free</button>
+                </div>
+            </section>
+
+            <!-- Grocery List Section -->
+            <section class="grocery-list-section">
+                <div class="grocery-header">
+                    <h1 class="grocery-title">Grocery List</h1>
+                    <div class="title-line"></div>
+                </div>
+                
+                <ul class="grocery-items">
+                    <li class="grocery-item" data-dietary="vegan halal gluten-free">
+                        <label class="checkbox-container">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <span class="item-name">Almond Milk</span>
+                        <div class="item-icons">
+                            <img src="images/food3.png" alt="" class="item-icon icon-2">
+                            <img src="images/food2.png" alt="" class="item-icon icon-1">
+                            <img src="images/food1.png" alt="" class="item-icon icon-3">
+                        </div>
+                    </li>
+                    <li class="grocery-item" data-dietary="gluten-free">
+                        <label class="checkbox-container">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <span class="item-name">Ground Beef</span>
+                        <div class="item-icons">
+                            <img src="images/food1.png" alt="" class="item-icon icon-3">
+                        </div>
+                    </li>
+                    <li class="grocery-item" data-dietary="halal gluten-free">
+                        <label class="checkbox-container">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <span class="item-name">Chicken Breasts</span>
+                        <div class="item-icons">
+                            <img src="images/food2.png" alt="" class="item-icon icon-1">
+                            <img src="images/food1.png" alt="" class="item-icon icon-3">
+                        </div>
+                    </li>
+                    <li class="grocery-item" data-dietary="halal gluten-free">
+                        <label class="checkbox-container">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <span class="item-name">Eggs</span>
+                        <div class="item-icons">
+                            <img src="images/food2.png" alt="" class="item-icon icon-1">
+                            <img src="images/food1.png" alt="" class="item-icon icon-3">
+                        </div>
+                    </li>
+                    <li class="grocery-item" data-dietary="vegan halal gluten-free">
+                        <label class="checkbox-container">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <span class="item-name">Tofu</span>
+                        <div class="item-icons">
+                            <img src="images/food3.png" alt="" class="item-icon icon-2">
+                            <img src="images/food2.png" alt="" class="item-icon icon-1">
+                            <img src="images/food1.png" alt="" class="item-icon icon-3">
+                        </div>
+                    </li>
+                    <li class="grocery-item" data-dietary="halal">
+                        <label class="checkbox-container">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <span class="item-name">Bread</span>
+                        <div class="item-icons">
+                            <img src="images/food2.png" alt="" class="item-icon icon-1">
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- Add Item Button -->
+                <button class="add-item-btn">Add Item</button>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <a href="#" class="footer-link">About Us</a>
+                <span class="copyright">© 2025 QuickCart. All rights reserved.</span>
+                <a href="#" class="footer-link">Help / FAQ</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
