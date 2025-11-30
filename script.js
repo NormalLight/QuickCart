@@ -156,17 +156,29 @@ function addNewItem(name, dietaryTags = '') {
     const newItem = document.createElement('li');
     newItem.className = 'grocery-item';
     newItem.setAttribute('data-dietary', dietaryTags);
-    newItem.innerHTML = `
-        <label class="checkbox-container">
-            <input type="checkbox">
-            <span class="checkmark"></span>
-        </label>
-        <span class="item-name">${escapeHtml(name)}</span>
-        <div class="item-icons">
-            <img src="images/food2.png" alt="" class="item-icon icon-1">
-            <img src="images/food1.png" alt="" class="item-icon icon-3">
-        </div>
-    `;
+let iconsHtml = "";
+
+if (dietaryTags.includes("vegan")) {
+    iconsHtml += `<img src="images/food3.png" class="item-icon icon-2">`;
+}
+if (dietaryTags.includes("halal")) {
+    iconsHtml += `<img src="images/food2.png" class="item-icon icon-1">`;
+}
+if (dietaryTags.includes("gluten-free")) {
+    iconsHtml += `<img src="images/food1.png" class="item-icon icon-3">`;
+}
+
+newItem.innerHTML = `
+    <label class="checkbox-container">
+        <input type="checkbox">
+        <span class="checkmark"></span>
+    </label>
+    <span class="item-name">${escapeHtml(name)}</span>
+    <div class="item-icons">
+        ${iconsHtml}
+    </div>
+`;
+
     
     // Add with animation
     newItem.style.opacity = '0';
